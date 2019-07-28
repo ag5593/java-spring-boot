@@ -3,8 +3,11 @@ Total 4 microservices --
 Deploy services per below sequence -
 
 1 Service-discovery  = This is Eureka server for service discovery
+
 2 General-service    = Front Service with Zuul gateway to redirect to other services like project and portfolio, also to authorize every request using JWT
+
 3 project-service    = Background microservice
+
 4 portfolio-service  = Background microservice
 
 
