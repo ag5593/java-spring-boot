@@ -17,6 +17,8 @@ http://localhost:8761/   Eureka Service URL to check which all services are regi
 
 http://localhost:8080/h2-console/   In Memory DB for token generation using user's role and implementation of method level security using JWT
 
+http://localhost:8080/swagger-ui.html#/  Swagger documentation for Front Service i.e. general-service (Profile controller and token controller )
+
 
 Examples - 
 
