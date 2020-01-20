@@ -9,6 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -41,11 +42,14 @@ public class GeneralServiceApplication extends SpringBootServletInitializer {
         aParameters.add(aParameterBuilder.build());             // add parameter
         return new Docket(DocumentationType.SWAGGER_2).select()
                                                       .apis(RequestHandlerSelectors
-                                                              .any())
+                                                              .basePackage("com.general.controller"))
                                                       .paths(PathSelectors.any())
                                                       .build().
                                                               pathMapping("")
+                                                              .ignoredParameterTypes(AuthenticationPrincipal.class)
                                                       .globalOperationParameters(aParameters);
 	}
+	
+	
 
 }
